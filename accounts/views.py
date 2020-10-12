@@ -45,13 +45,3 @@ class ChangePasswordAPIView(views.APIView):
         login(request, user, backend='django.contrib.auth.backends.ModelBackend')
 
         return Response(status=status.HTTP_200_OK)
-
-
-
-
-
-
-
-
-
-

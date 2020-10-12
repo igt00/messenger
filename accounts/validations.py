@@ -7,4 +7,4 @@ def validate_password(password):
     if not any([char.isdigit() for char in password]):
         raise ValidationError('Пароль должен содержать хотя бы одну цифру')
     if not any([char.isupper() for char in password]):
-        raise ValidationError('пароль должен содержать хотя бы одну заглавную букву')
+        raise ValidationError('Пароль должен содержать хотя бы одну заглавную букву')
