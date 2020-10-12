@@ -1,4 +1,4 @@
 from rest_framework import views
 
-class MainAPIView(views.APIViews):
+class MainAPIView(views.APIView):
     pass
