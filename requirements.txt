@@ -1,3 +1,4 @@
 Django==2.2.16
 djangorestframework==3.11.0
 factory-boy==2.9.2
+drf-yasg==1.17.1
