@@ -1,7 +1,7 @@
 from rest_framework import views, status
 from rest_framework.generics import CreateAPIView
 
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.permissions import IsAuthenticated
@@ -28,6 +28,15 @@ class LoginUserAPIView(views.APIView):
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
+class LogoutUserAPIView(views.APIView):
+    authentication_classes = [SessionAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self,  request):
+        logout(request)
+        return Response(status=status.HTTP_200_OK)
 
 
 class ChangePasswordAPIView(views.APIView):
